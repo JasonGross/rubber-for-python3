@@ -5,3 +5,5 @@ src/version.py
 build
 build-stamp
 in
+
+.DS_Store

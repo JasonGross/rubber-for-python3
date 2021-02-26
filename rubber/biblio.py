@@ -192,6 +192,6 @@ class BibTeXDep(BibToolDep):
         if filename is not None:
             self.bst_file = filename
             self.add_source(filename)
-        elif name not in ["plain", "alpha"]:
-            # do not complain about default styles coming with bibtex
-            msg.warning(_("cannot find bibliography style %s") % name)
+        # elif name not in ["plain", "alpha"]:
+        #     # do not complain about default styles coming with bibtex
+        #     msg.warning(_("cannot find bibliography style %s") % name)

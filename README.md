@@ -1,3 +1,66 @@
+# Rubber for Python 3
+
+Since Python2 has been deprecated, we archived our previous fork of
+`rubber` for Python2 (https://github.com/oracleyue/rubber). Now let us
+move to `rubber` with Python3, forking 
+[rubber on GitLab](https://gitlab.com/latex-rubber/rubber), with issues
+fixed for Mac OS X (passed for macOS Catalina).
+
+## Dependencies
+
+GNU/Linux version of `texinfo` package: install by  
+
+``` shell
+  $ brew install texinfo
+```
+
+Note that you have to manually add its bin to `PATH`, since macOS also
+provides commandlines with the same names, like `makeinfo`, `texi2pdf`.
+
+## Installations
+
+Firstly clone this project and go to the folder, simply run
+
+``` shell
+  $ python3 setup.py install
+```
+
+This will first build `rubber`, then, by default (the paths depend on
+your Python setup), 
+
+- copy the library files to your default `site-packages` (e.g.,
+`/usr/local/lib/python3.8/site-packages/`);
+
+- install the executable files (`rubber`, `rubber-info`, `rubber-pipe`,
+`rubber-lsmod`) to `/usr/local/bin`;
+
+- install the man page to `/usr/local/man` and the `info, html, pdf`
+  docs to `/usr/local/share/doc/rubber/`.
+
+If you like to specify a path to install `rubber`, go and check the
+[original readme](#original-readme).
+
+If you only want to build it without default installation, run  
+
+``` shell
+  $ python3 setup.py build
+```
+
+If you have issues observed, clean the build files by  
+
+``` shell
+  $ python3 setup.py clean --all
+```
+
+**Warning**: there is another package called `rubber` available on
+PyPI.org, which is completely different. If you installed it before,
+please consider removing it or install our `rubber` in a different path
+from the default location of `pip install`; otherwise, these two
+packages will merge together and yield very strange errors.
+
+
+# Original READEME
+
 This is Rubber.
 
 Rubber is a building system for LaTeX documents. It is based on a routine that
@@ -11,7 +74,7 @@ compilation. The associated tool "rubber-info" extracts information, such as
 dependency relations or post-compilation diagnostics.
 
 
-* Installation
+## Installation
 
 Running Rubber just requires Python 3.5.  Of course it won't
 be of much use without a working LaTeX environment (Rubber is known to work on
@@ -24,26 +87,33 @@ the documentation, you need texinfo (Debian package: texinfo).
 
 To compile and install Rubber, just follow the usual procedure:
 
-# python3 setup.py --help
-# python3 setup.py install
-# python3 setup.py clean --all
-
+```sh
+$ python3 setup.py --help
+$ python3 setup.py install
+$ python3 setup.py clean --all
+```
 
 Some useful options to setup.py include:
 
 Disabling info docs:
 
-# python3 setup.py build --info=False install
+```sh
+$ python3 setup.py build --info=False install
+```
 
 and similar for --html, --man, --pdf.
 
 Changing the installation path for manpages:
 
-# python3 setup.py install --mandir=/path/to/man/pages
+``` shell
+$ python3 setup.py install --mandir=/path/to/man/pages
+```
 
 Installing to a staging directory instead of the root/prefix:
 
-# python3 setup.py install --root=/staging/directory
+``` shell
+$ python3 setup.py install --root=/staging/directory
+```
 
 Note that if you need build and install to be two different steps
 (for example when building packages for distribution purposes),
@@ -53,6 +123,7 @@ you'd like not to build some of the documentation.  It is then best
 to make options permanent by putting them info a setup.cfg file.  For
 example:
 
+```
 [build]
 man = 1
 html = 0
@@ -61,14 +132,16 @@ info = 0
 txt = 0
 [install]
 prefix  = /usr
+```
 
 Finally, invoke
 
-# python3 setup.py build
-# python3 setup.py install --root=/staging/directory
+``` shell
+$ python3 setup.py build
+$ python3 setup.py install --root=/staging/directory
+```
 
-
-* Usage
+## Usage
 
 As civility requires, saying `rubber --help' and `rubber-info --help' provides
 a short description of the command line's syntax. The included manual pages
@@ -76,7 +149,7 @@ a short description of the command line's syntax. The included manual pages
 precise usage information.
 
 
-* Known Bugs
+## Known Bugs
 
 Rubber is generally working fine, though there are some known issues.
 
@@ -110,7 +183,7 @@ altogether if a rewrite were attempted (e.g. the onchange mechanism, modules,
 Rubber tries to err on the side of caution here.
 
 
-* Author
+## Author
 
 Rubber was originally written by Emmanuel Beffara <emmanuel@beffara.org>.
 It is currently maintained by Florian Schmaus <flo@geekplace.eu>,
@@ -125,7 +198,7 @@ re-thanks to those who wrote patches and bugfixes.
 Any kind of feedback is appreciated, in order to make this program as useful
 and robust as possible.
 
-* License
+## License
 
 Rubber is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
