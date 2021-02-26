@@ -1,7 +1,7 @@
 # Rubber for Python 3
 
-Since Python2 has been deprecated, we archived our previous fork of
-`rubber` for Python2 (https://github.com/oracleyue/rubber). Now let us
+Since Python2 has been deprecated, we archived [our previous fork](https://github.com/oracleyue/rubber) of
+`rubber` for Python2. Now let us
 move to `rubber` with Python3, forking 
 [rubber on GitLab](https://gitlab.com/latex-rubber/rubber), with issues
 fixed for Mac OS X (passed for macOS Catalina).
@@ -59,7 +59,7 @@ from the default location of `pip install`; otherwise, these two
 packages will merge together and yield very strange errors.
 
 
-# Original README
+## Original README
 
 This is Rubber.
 
@@ -74,7 +74,7 @@ compilation. The associated tool "rubber-info" extracts information, such as
 dependency relations or post-compilation diagnostics.
 
 
-## Installation
+### Installation
 
 Running Rubber just requires Python 3.5.  Of course it won't
 be of much use without a working LaTeX environment (Rubber is known to work on
@@ -141,7 +141,7 @@ $ python3 setup.py build
 $ python3 setup.py install --root=/staging/directory
 ```
 
-## Usage
+### Usage
 
 As civility requires, saying `rubber --help' and `rubber-info --help' provides
 a short description of the command line's syntax. The included manual pages
@@ -149,7 +149,7 @@ a short description of the command line's syntax. The included manual pages
 precise usage information.
 
 
-## Known Bugs
+### Known Bugs
 
 Rubber is generally working fine, though there are some known issues.
 
@@ -183,7 +183,7 @@ altogether if a rewrite were attempted (e.g. the onchange mechanism, modules,
 Rubber tries to err on the side of caution here.
 
 
-## Author
+### Author
 
 Rubber was originally written by Emmanuel Beffara <emmanuel@beffara.org>.
 It is currently maintained by Florian Schmaus <flo@geekplace.eu>,
@@ -198,7 +198,7 @@ re-thanks to those who wrote patches and bugfixes.
 Any kind of feedback is appreciated, in order to make this program as useful
 and robust as possible.
 
-## License
+### License
 
 Rubber is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
