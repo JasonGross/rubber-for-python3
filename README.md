@@ -59,7 +59,7 @@ from the default location of `pip install`; otherwise, these two
 packages will merge together and yield very strange errors.
 
 
-# Original READEME
+# Original README
 
 This is Rubber.
 
