@@ -220,7 +220,7 @@ def extract_version():
                                       stderr=subprocess.DEVNULL)
             result.wait()
             git_describe_output = result.stdout.read().decode('utf-8').strip()
-            if git_describe_output != version:
+            if git_describe_output and git_describe_output != version:
                 version += " (" + git_describe_output + ")"
         except:
             # We warn about, but otherwise ignore exceptions here.
